@@ -32,6 +32,11 @@ module Enumerable
     count
   end
 
+  def my_select
+    new_array = []
+    my_each { |item| new_array.push(item) if yield item }
+    new_array
+  end
 end
 
 # You will first have to define my_each
