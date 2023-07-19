@@ -8,6 +8,11 @@ module Enumerable
     end
     self
   end
+
+  def my_all?
+    my_each { |item| return false unless yield item }
+    true
+  end
 end
 
 # You will first have to define my_each
