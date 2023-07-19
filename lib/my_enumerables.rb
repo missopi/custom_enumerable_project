@@ -18,6 +18,12 @@ module Enumerable
     my_each { |item| return false if yield item }
     true
   end
+
+  def my_any?
+    my_each { |item| return true if yield item }
+    false
+  end
+
 end
 
 # You will first have to define my_each
