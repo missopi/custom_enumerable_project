@@ -13,6 +13,11 @@ module Enumerable
     my_each { |item| return false unless yield item }
     true
   end
+
+  def my_none?
+    my_each { |item| return false if yield item }
+    true
+  end
 end
 
 # You will first have to define my_each
