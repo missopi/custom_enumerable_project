@@ -37,6 +37,13 @@ module Enumerable
     my_each { |item| new_array.push(item) if yield item }
     new_array
   end
+
+  def my_map
+    new_array = []
+    my_each { |item| new_array.push(yield item) }
+    new_array
+  end
+
 end
 
 # You will first have to define my_each
