@@ -8,4 +8,13 @@ end
 # to this method
 class Array
   # Define my_each here
+  # custom version of .each method
+  def my_each
+    i = 0
+    while i < length
+      yield self[i]
+      i += 1
+    end
+    self
+  end
 end
