@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# custom versions of enumerable methods that already exist
 module Enumerable
   def my_each_with_index
     i = 0
@@ -44,7 +47,7 @@ module Enumerable
   end
 end
 
-# Methods defined in your enumerable module will have access to this method
+# Methods defined in your enumerable module have access to this method
 class Array
   # custom version of .each method
   def my_each
