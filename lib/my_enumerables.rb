@@ -3,11 +3,7 @@
 # custom versions of enumerable methods
 module Enumerable
   def my_each_with_index
-    i = 0
-    while i < length
-      yield self[i], i
-      i += 1
-    end
+    my_each { |value, index| yield(value, index) }
     self
   end
 
@@ -57,10 +53,8 @@ end
 class Array
   # custom version of each method
   def my_each
-    i = 0
-    while i < length
-      yield self[i]
-      i += 1
+    for i in self
+      yield i
     end
     self
   end
