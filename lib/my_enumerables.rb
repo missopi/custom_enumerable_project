@@ -42,8 +42,7 @@ module Enumerable
     new_array
   end
 
-  def my_inject(initial_value = self[0])
-    sum = initial_value
+  def my_inject(sum = self[0])
     my_each { |value| sum = yield(sum, value) }
     sum
   end
