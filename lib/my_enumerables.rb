@@ -52,8 +52,8 @@ end
 class Array
   # custom version of each method
   def my_each
-    for i in self
-      yield i
+    for value in self
+      yield value
     end
     self
   end
