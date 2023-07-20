@@ -32,7 +32,7 @@ module Enumerable
 
   def my_select
     new_array = []
-    my_each { |value| new_array.push(item) if yield value }
+    my_each { |value| new_array.push(value) if yield value }
     new_array
   end
 
