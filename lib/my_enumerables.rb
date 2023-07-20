@@ -12,17 +12,17 @@ module Enumerable
   end
 
   def my_all?
-    my_each { |item| return false unless yield item }
+    my_each { |value| return false unless yield value }
     true
   end
 
   def my_none?
-    my_each { |item| return false if yield item }
+    my_each { |value| return false if yield value }
     true
   end
 
   def my_any?
-    my_each { |item| return true if yield item }
+    my_each { |value| return true if yield value }
     false
   end
 
@@ -30,19 +30,19 @@ module Enumerable
     return length unless block_given?
 
     count = 0
-    my_each { |item| count += 1 if yield item }
+    my_each { |value| count += 1 if yield value }
     count
   end
 
   def my_select
     new_array = []
-    my_each { |item| new_array.push(item) if yield item }
+    my_each { |value| new_array.push(item) if yield value }
     new_array
   end
 
   def my_map
     new_array = []
-    my_each { |item| new_array.push(yield item) }
+    my_each { |value| new_array.push(yield value) }
     new_array
   end
 
