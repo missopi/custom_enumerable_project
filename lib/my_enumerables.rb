@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# custom versions of enumerable methods that already exist
+# custom versions of enumerable methods
 module Enumerable
   def my_each_with_index
     i = 0
@@ -45,11 +45,17 @@ module Enumerable
     my_each { |item| new_array.push(yield item) }
     new_array
   end
+
+  def my_inject(initial_value = self[0])
+    sum = initial_value
+    my_each { |value| sum = yield(sum, value) }
+    sum
+  end
 end
 
-# Methods defined in your enumerable module have access to this method
+# Methods defined in enumerable module have access to this method
 class Array
-  # custom version of .each method
+  # custom version of each method
   def my_each
     i = 0
     while i < length
