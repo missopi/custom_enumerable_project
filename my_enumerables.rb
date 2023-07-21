@@ -2,8 +2,8 @@
 
 # custom versions of enumerable methods
 module Enumerable
-  def my_each_with_index
-    my_each { |value, index| yield(value, index) }
+  def my_each_with_index(&block)
+    my_each { |value, index| block.call(value, index) }
     self
   end
 
